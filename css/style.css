@@ -1,0 +1,201 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #fff;
+  background: #1c333e;
+  margin: 0;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: auto;
+}
+
+.video-bg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  transform: translate(-50%);
+  overflow: hidden;
+}
+.video-bg .video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+.page-header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  border-bottom: solid 1px #354035;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.page-header .page-header-inner {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  align-items: stretch;
+}
+.page-header .page-header-inner .title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.page-header .page-header-inner .title span {
+  font-size: 28px;
+  line-height: 60px;
+}
+.page-header .page-header-inner .nav {
+  display: flex;
+  align-items: center;
+  align-items: stretch;
+  gap: 40px;
+}
+.page-header .page-header-inner .nav a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  text-decoration: none;
+}
+.page-header .page-header-inner .nav a span {
+  line-height: 60px;
+}
+.page-header .page-header-inner .nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s;
+}
+.page-header .page-header-inner .nav a:hover::before, .page-header .page-header-inner .nav a.active::before {
+  width: 100%;
+}
+
+.banner .banner-inner {
+  display: flex;
+  height: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner .banner-inner .avatar {
+  width: 120px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: solid 4px #fff;
+}
+.banner .banner-inner .avatar img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes itemBgRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.section {
+  padding: 22px 0;
+}
+.section .section-content .list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.section .section-content .list .item {
+  padding: 1px;
+  transform: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.section .section-content .list .item::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, transparent, #fff);
+  left: -50%;
+  top: -50%;
+  transform-origin: center;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.section .section-content .list .item .item-inner {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+.section .section-content .list .item .item-inner img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  transition: all 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section .section-content .list .item .item-inner span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+.section .section-content .list .item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.section .section-content .list .item:hover::before {
+  animation: itemBgRotate linear 3s infinite;
+  opacity: 1;
+}
+.section .section-content .list .item:hover .item-inner img {
+  filter: brightness(1.1);
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.footer .footer-inner {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer-inner .copyright {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
