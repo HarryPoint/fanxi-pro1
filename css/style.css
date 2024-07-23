@@ -161,6 +161,8 @@ body {
   width: 100%;
   aspect-ratio: 16/9;
   transition: all 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .section .section-content .list .item .item-inner span {
   position: absolute;
