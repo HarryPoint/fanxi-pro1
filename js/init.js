@@ -39,15 +39,10 @@ function smooth() {
 }
 
 function handleHashChange() {
-  // 获取当前URL的hash值
   const currentHash = window.location.hash;
-  // 遍历所有锚点链接
   document.querySelectorAll("a[href]").forEach(function (anchor) {
-    // 移除之前可能添加的样式类
     anchor.classList.remove("active");
-    // 检查锚点链接的href属性是否与当前hash值匹配
     if (anchor.getAttribute("href") === currentHash) {
-      // 给匹配的锚点链接添加特定的样式类
       anchor.classList.add("active");
     }
   });
